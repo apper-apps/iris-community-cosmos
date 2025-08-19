@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "userId": 1,
+    "courseId": 1,
+    "completedLessons": 2,
+    "lastAccessedLessonId": 103,
+    "startedAt": "2024-03-18T14:30:00.000Z",
+    "lastUpdated": "2024-03-22T16:45:00.000Z"
+  },
+  {
+    "Id": 2,
+    "userId": 1,
+    "courseId": 2,
+    "completedLessons": 0,
+    "lastAccessedLessonId": null,
+    "startedAt": null,
+    "lastUpdated": null
+  },
+  {
+    "Id": 3,
+    "userId": 1,
+    "courseId": 3,
+    "completedLessons": 1,
+    "lastAccessedLessonId": 301,
+    "startedAt": "2024-03-20T09:15:00.000Z",
+    "lastUpdated": "2024-03-21T11:20:00.000Z"
+  },
+  {
+    "Id": 4,
+    "userId": 2,
+    "courseId": 1,
+    "completedLessons": 5,
+    "lastAccessedLessonId": 106,
+    "startedAt": "2024-02-15T10:00:00.000Z",
+    "lastUpdated": "2024-03-19T14:30:00.000Z"
+  },
+  {
+    "Id": 5,
+    "userId": 3,
+    "courseId": 2,
+    "completedLessons": 3,
+    "lastAccessedLessonId": 204,
+    "startedAt": "2024-03-10T13:20:00.000Z",
+    "lastUpdated": "2024-03-21T09:45:00.000Z"
+  }
+]

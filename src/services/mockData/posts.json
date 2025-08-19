@@ -1,0 +1,147 @@
+[
+  {
+    "Id": 1,
+    "title": "Welcome to Our Learning Community!",
+    "content": "Hello everyone! 👋\n\nI'm excited to kick off our community discussions. This is a space where we can share knowledge, ask questions, and support each other on our learning journeys.\n\n**What you can expect:**\n• Daily discussions on various topics\n• Q&A sessions with experienced developers\n• Resource sharing and recommendations\n• Collaborative learning opportunities\n\nFeel free to introduce yourselves and let us know what you're currently learning!",
+    "authorId": 1,
+    "category": "Announcements",
+    "timestamp": "2024-03-20T09:00:00.000Z",
+    "likes": 45,
+    "comments": [
+      {
+        "id": 1,
+        "content": "Thanks for setting this up! Looking forward to engaging with everyone.",
+        "authorId": 2,
+        "author": {
+          "name": "Sarah Wilson",
+          "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b605?w=32&h=32&fit=crop&crop=face"
+        },
+        "timestamp": "2024-03-20T09:30:00.000Z"
+      },
+      {
+        "id": 2,
+        "content": "Great initiative! Can't wait to share and learn from everyone here.",
+        "authorId": 3,
+        "author": {
+          "name": "Mike Chen",
+          "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+        },
+        "timestamp": "2024-03-20T10:15:00.000Z"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "title": "Best Practices for React Hooks",
+    "content": "I've been working with React hooks for a while now and wanted to share some best practices I've learned:\n\n**1. Use useCallback for expensive functions**\nWrap functions in useCallback when passing them as props to prevent unnecessary re-renders.\n\n**2. Custom hooks for reusable logic**\nCreate custom hooks to share stateful logic between components.\n\n**3. useEffect dependencies**\nAlways include all dependencies in the dependency array to avoid stale closures.\n\nWhat other React hooks tips do you have? Let's discuss!",
+    "authorId": 3,
+    "category": "Discussions",
+    "timestamp": "2024-03-20T14:30:00.000Z",
+    "likes": 32,
+    "comments": [
+      {
+        "id": 3,
+        "content": "Great tips! I'd also add using useMemo for expensive calculations.",
+        "authorId": 1,
+        "author": {
+          "name": "John Doe",
+          "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+        },
+        "timestamp": "2024-03-20T15:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "title": "How do I handle form validation in React?",
+    "content": "I'm building a registration form and struggling with validation. I need to:\n\n• Validate email format\n• Check password strength\n• Show error messages in real-time\n• Prevent submission if validation fails\n\nI've looked at libraries like Formik and React Hook Form, but I'm not sure which approach is best. Any recommendations?",
+    "authorId": 4,
+    "category": "Questions",
+    "timestamp": "2024-03-21T10:15:00.000Z",
+    "likes": 18,
+    "comments": [
+      {
+        "id": 4,
+        "content": "I recommend React Hook Form! It has great performance and built-in validation.",
+        "authorId": 2,
+        "author": {
+          "name": "Sarah Wilson",
+          "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b605?w=32&h=32&fit=crop&crop=face"
+        },
+        "timestamp": "2024-03-21T10:45:00.000Z"
+      },
+      {
+        "id": 5,
+        "content": "For simple forms, you might not need a library. useState with custom validation functions can work well.",
+        "authorId": 5,
+        "author": {
+          "name": "David Park",
+          "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+        },
+        "timestamp": "2024-03-21T11:20:00.000Z"
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "title": "Weekly Challenge: Build a Todo App with Local Storage",
+    "content": "🏆 **This Week's Coding Challenge**\n\nLet's build a todo application with the following features:\n\n**Required Features:**\n• Add, edit, and delete todos\n• Mark todos as complete\n• Filter todos (all, active, completed)\n• Persist data in localStorage\n\n**Bonus Points:**\n• Add due dates\n• Implement drag and drop reordering\n• Add categories or tags\n\nShare your solutions in the comments or create a new post with your implementation. Looking forward to seeing your creative approaches!",
+    "authorId": 1,
+    "category": "Announcements",
+    "timestamp": "2024-03-21T16:00:00.000Z",
+    "likes": 27,
+    "comments": []
+  },
+  {
+    "Id": 5,
+    "title": "Understanding JavaScript Closures",
+    "content": "Closures are one of the most important concepts in JavaScript, but they can be tricky to understand at first.\n\n**What is a closure?**\nA closure is a function that has access to variables in its outer (enclosing) scope even after the outer function has returned.\n\n**Simple Example:**\n```javascript\nfunction outerFunction(x) {\n  return function innerFunction(y) {\n    return x + y;\n  };\n}\n\nconst add5 = outerFunction(5);\nconsole.log(add5(3)); // 8\n```\n\nThe inner function remembers the value of `x` even after `outerFunction` has finished executing. This is a closure!\n\nClosures are commonly used for:\n• Creating private variables\n• Module patterns\n• Event handlers\n• Callbacks\n\nWhat questions do you have about closures?",
+    "authorId": 5,
+    "category": "Discussions",
+    "timestamp": "2024-03-22T11:30:00.000Z",
+    "likes": 41,
+    "comments": [
+      {
+        "id": 6,
+        "content": "This is a great explanation! Closures finally make sense to me now.",
+        "authorId": 6,
+        "author": {
+          "name": "Lisa Thompson",
+          "avatar": "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?w=32&h=32&fit=crop&crop=face"
+        },
+        "timestamp": "2024-03-22T12:00:00.000Z"
+      },
+      {
+        "id": 7,
+        "content": "Could you show an example of using closures for private variables?",
+        "authorId": 7,
+        "author": {
+          "name": "Alex Kim",
+          "avatar": "https://images.unsplash.com/photo-1507101105822-7472b28e22ac?w=32&h=32&fit=crop&crop=face"
+        },
+        "timestamp": "2024-03-22T13:15:00.000Z"
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "title": "Need help with CSS Grid vs Flexbox",
+    "content": "I'm working on a complex layout and can't decide whether to use CSS Grid or Flexbox. The layout has:\n\n• A header spanning the full width\n• A sidebar on the left\n• Main content area\n• A footer at the bottom\n\nI've heard that Grid is better for 2D layouts and Flexbox for 1D, but I'm still confused about when to use each. Can someone explain the key differences and when to choose one over the other?",
+    "authorId": 8,
+    "category": "Questions",
+    "timestamp": "2024-03-22T15:45:00.000Z",
+    "likes": 23,
+    "comments": [
+      {
+        "id": 8,
+        "content": "For your layout, CSS Grid would be perfect! It's designed for exactly this type of 2D layout.",
+        "authorId": 2,
+        "author": {
+          "name": "Sarah Wilson",
+          "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b605?w=32&h=32&fit=crop&crop=face"
+        },
+        "timestamp": "2024-03-22T16:10:00.000Z"
+      }
+    ]
+  }
+]
