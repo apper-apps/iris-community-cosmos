@@ -92,7 +92,7 @@ const PostCard = ({
 
       {/* Post Content */}
 <div 
-        className="text-gray-300 mb-4 leading-relaxed px-4"
+        className="text-gray-300 mb-4 leading-relaxed px-6"
         dangerouslySetInnerHTML={{ 
           __html: formatContent(post.content) 
         }}
@@ -120,11 +120,11 @@ const PostCard = ({
 
       {/* Comments Section */}
       {showComments && (
-        <motion.div
+<motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
-          className="mt-4 pt-4 border-t border-gray-700 space-y-4"
+          className="mt-4 pt-4 border-t border-gray-700 space-y-4 px-6"
         >
           {/* New Comment Form */}
           <form onSubmit={handleCommentSubmit} className="flex gap-3">
