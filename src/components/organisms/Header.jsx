@@ -78,18 +78,6 @@ const Header = ({ onMenuToggle, userPoints = 1250 }) => {
 
         {/* Profile Menu */}
         <div className="relative">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setShowProfile(!showProfile)}
-            className="flex items-center gap-2"
-          >
-            <Avatar 
-              size="default"
-              fallback="John Doe"
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
-            />
-          </motion.button>
 
           {/* Profile Dropdown */}
           {showProfile && (
