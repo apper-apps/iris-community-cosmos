@@ -174,7 +174,7 @@ icon="MessageSquare"
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="space-y-4"
+className="space-y-6"
         >
           {filteredPosts.map((post, index) => {
             const author = users.find(u => u.Id === post.authorId);

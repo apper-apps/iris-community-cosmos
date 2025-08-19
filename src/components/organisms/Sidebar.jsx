@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 import ApperIcon from "@/components/ApperIcon";
+import Avatar from "@/components/atoms/Avatar";
 import { cn } from "@/utils/cn";
-
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
 
@@ -45,8 +45,8 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   // Desktop Sidebar
   const DesktopSidebar = () => (
-<div className="hidden lg:block w-64 h-full bg-surface border-l border-gray-700">
-      <div className="p-6">
+<div className="hidden lg:block w-64 h-full bg-surface border-l border-gray-700 flex flex-col">
+      <div className="p-6 flex-1">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
             <ApperIcon name="Zap" size={24} className="text-white" />
@@ -62,6 +62,21 @@ const Sidebar = ({ isOpen, onClose }) => {
             <NavItem key={item.path} item={item} />
           ))}
         </nav>
+      </div>
+
+      {/* Profile Section */}
+      <div className="p-6 border-t border-gray-700">
+        <div className="flex items-center gap-3">
+          <Avatar 
+            size="default"
+            fallback="John Doe"
+            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+          />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-white truncate">John Doe</p>
+            <p className="text-xs text-gray-400 truncate">@johndoe</p>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -85,9 +100,9 @@ const Sidebar = ({ isOpen, onClose }) => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? 0 : "-100%" }}
         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-className="lg:hidden fixed right-0 top-0 h-full w-64 bg-surface border-l border-gray-700 z-50"
+className="lg:hidden fixed right-0 top-0 h-full w-64 bg-surface border-l border-gray-700 z-50 flex flex-col"
       >
-        <div className="p-6">
+        <div className="p-6 flex-1">
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
@@ -111,6 +126,21 @@ className="lg:hidden fixed right-0 top-0 h-full w-64 bg-surface border-l border-
               <NavItem key={item.path} item={item} />
             ))}
           </nav>
+        </div>
+
+        {/* Profile Section */}
+        <div className="p-6 border-t border-gray-700">
+          <div className="flex items-center gap-3">
+            <Avatar 
+              size="default"
+              fallback="John Doe"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+            />
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-white truncate">John Doe</p>
+              <p className="text-xs text-gray-400 truncate">@johndoe</p>
+            </div>
+          </div>
         </div>
       </motion.div>
     </>

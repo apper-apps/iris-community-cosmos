@@ -30,7 +30,7 @@ return (
         <div className="flex h-screen overflow-hidden">
           {/* Main Content */}
           <div className="flex-1 flex flex-col min-w-0">
-            <Header onMenuToggle={handleMenuToggle} userPoints={1250} />
+<Header onMenuToggle={handleMenuToggle} userPoints={1250} />
             
             {/* Page Content */}
             <main className="flex-1 overflow-auto">
@@ -97,7 +97,7 @@ return (
           </div>
 
           {/* Sidebar */}
-          <Sidebar isOpen={sidebarOpen} onClose={handleCloseSidebar} />
+<Sidebar isOpen={sidebarOpen} onClose={handleCloseSidebar} />
         </div>
         
         {/* Toast Notifications */}
