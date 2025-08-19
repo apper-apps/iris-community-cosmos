@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { AnimatePresence, motion } from "framer-motion";
@@ -26,8 +26,7 @@ function App() {
   };
 
 return (
-    <Router>
-      <div className="min-h-screen bg-background text-white font-body">
+<div className="min-h-screen bg-background text-white font-body">
         <div className="flex h-screen overflow-hidden">
           {/* Main Content */}
           <div className="flex-1 flex flex-col min-w-0">
@@ -114,10 +113,9 @@ return (
           pauseOnHover
           theme="dark"
           toastClassName="glass"
-          style={{ zIndex: 9999 }}
+style={{ zIndex: 9999 }}
         />
       </div>
-    </Router>
   );
 }
 
