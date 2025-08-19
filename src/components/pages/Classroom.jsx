@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import CourseCard from "@/components/organisms/CourseCard";
-import LessonViewer from "@/components/organisms/LessonViewer";
-import SearchBar from "@/components/molecules/SearchBar";
-import FilterTabs from "@/components/molecules/FilterTabs";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import SearchBar from "@/components/molecules/SearchBar";
+import FilterTabs from "@/components/molecules/FilterTabs";
+import LessonViewer from "@/components/organisms/LessonViewer";
+import CourseCard from "@/components/organisms/CourseCard";
 import courseService from "@/services/api/courseService";
 import userProgressService from "@/services/api/userProgressService";
 
@@ -14,15 +14,14 @@ const Classroom = () => {
   const [courses, setCourses] = useState([]);
   const [userProgress, setUserProgress] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
+const [error, setError] = useState("");
   const [activeFilter, setActiveFilter] = useState("All Courses");
+  const [searchQuery, setSearchQuery] = useState("");
   
   // Lesson viewer state
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [selectedLesson, setSelectedLesson] = useState(null);
   const [lessonIndex, setLessonIndex] = useState(0);
-
   const loadData = async () => {
     setLoading(true);
     setError("");
@@ -67,10 +66,12 @@ const Classroom = () => {
     { label: "Not Started", value: "Not Started" }
   ];
 
-  const filteredCourses = coursesWithProgress.filter(course => {
+const filteredCourses = coursesWithProgress.filter(course => {
+    // Search filter
     const matchesSearch = !searchQuery || 
-      course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      course.description.toLowerCase().includes(searchQuery.toLowerCase());
+      course.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      course.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      course.category?.toLowerCase().includes(searchQuery.toLowerCase());
 
     const totalLessons = course.lessons?.length || 0;
     const completedLessons = course.progress.completedLessons;
@@ -176,12 +177,12 @@ const Classroom = () => {
         </p>
       </div>
 
-      {/* Search and Filters */}
+{/* Search and Filters */}
       <div className="space-y-4">
         <SearchBar
-          placeholder="Search courses by title or description..."
-          onSearch={setSearchQuery}
-          className="max-w-md"
+          value={searchQuery}
+          onChange={setSearchQuery}
+          placeholder="Search courses by title, description, or category..."
         />
         
         <FilterTabs
@@ -221,13 +222,12 @@ const Classroom = () => {
 
       {/* Courses Grid */}
       {filteredCourses.length === 0 ? (
-        <Empty
+<Empty
           icon="BookOpen"
-          title={searchQuery ? "No courses found" : "No courses available"}
-          message={searchQuery ? "Try adjusting your search terms" : "New courses will be added soon!"}
+          title="No courses available"
+          message="New courses will be added soon!"
           actionText="Browse All Courses"
           onAction={() => {
-            setSearchQuery("");
             setActiveFilter("All Courses");
           }}
         />

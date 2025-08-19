@@ -19,7 +19,6 @@ const Feed = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [activeFilter, setActiveFilter] = useState("All Posts");
-  const [searchQuery, setSearchQuery] = useState("");
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [likedPosts, setLikedPosts] = useState(new Set());
 
@@ -55,12 +54,9 @@ const Feed = () => {
   }, []);
 
   const filteredPosts = posts.filter(post => {
-    const matchesFilter = activeFilter === "All Posts" || post.category === activeFilter;
-    const matchesSearch = !searchQuery || 
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.content.toLowerCase().includes(searchQuery.toLowerCase());
+const matchesFilter = activeFilter === "All Posts" || post.category === activeFilter;
     
-    return matchesFilter && matchesSearch;
+    return matchesFilter;
   }).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
   const handleLike = async (postId) => {
@@ -157,11 +153,6 @@ const Feed = () => {
 
       {/* Search and Filters */}
       <div className="space-y-4">
-        <SearchBar
-          placeholder="Search posts by title or content..."
-          onSearch={setSearchQuery}
-          className="max-w-md"
-        />
         
         <FilterTabs
           tabs={filterTabs}
@@ -173,9 +164,9 @@ const Feed = () => {
       {/* Posts */}
       {filteredPosts.length === 0 ? (
         <Empty
-          icon="MessageSquare"
-          title={searchQuery ? "No posts found" : "No posts yet"}
-          message={searchQuery ? "Try adjusting your search terms" : "Be the first to share something with the community!"}
+icon="MessageSquare"
+          title="No posts yet"
+          message="Be the first to share something with the community!"
           actionText="Create First Post"
           onAction={() => setShowCreateModal(true)}
         />

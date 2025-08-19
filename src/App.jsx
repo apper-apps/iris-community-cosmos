@@ -1,18 +1,18 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { Route, Router, Routes } from "react-router-dom";
+import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
-import { motion, AnimatePresence } from "framer-motion";
-
-// Layout Components
-import Sidebar from "@/components/organisms/Sidebar";
-import Header from "@/components/organisms/Header";
-
-// Pages
-import Feed from "@/components/pages/Feed";
+import { AnimatePresence, motion } from "framer-motion";
+import Guidelines from "@/components/pages/Guidelines";
 import Members from "@/components/pages/Members";
+import Feed from "@/components/pages/Feed";
 import Classroom from "@/components/pages/Classroom";
 import Leaderboard from "@/components/pages/Leaderboard";
-import Guidelines from "@/components/pages/Guidelines";
+import Header from "@/components/organisms/Header";
+import Sidebar from "@/components/organisms/Sidebar";
+
+// Layout Components
+
+// Pages
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -25,87 +25,80 @@ function App() {
     setSidebarOpen(false);
   };
 
-  return (
+return (
     <Router>
       <div className="min-h-screen bg-background text-white font-body">
         <div className="flex h-screen overflow-hidden">
-          {/* Sidebar */}
-          <Sidebar isOpen={sidebarOpen} onClose={handleCloseSidebar} />
-          
           {/* Main Content */}
           <div className="flex-1 flex flex-col min-w-0">
-            {/* Header */}
-            <Header onMenuToggle={handleMenuToggle} />
+            <Header onMenuToggle={handleMenuToggle} userPoints={1250} />
             
             {/* Page Content */}
-            <main className="flex-1 overflow-auto scrollbar-thin">
-              <div className="container mx-auto px-4 lg:px-8 py-6 max-w-7xl">
-                <AnimatePresence mode="wait">
-                  <Routes>
-                    <Route path="/" element={
-                      <motion.div
-                        key="feed"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Feed />
-                      </motion.div>
-                    } />
-                    
-                    <Route path="/members" element={
-                      <motion.div
-                        key="members"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Members />
-                      </motion.div>
-                    } />
-                    
-                    <Route path="/classroom" element={
-                      <motion.div
-                        key="classroom"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Classroom />
-                      </motion.div>
-                    } />
-                    
-                    <Route path="/leaderboard" element={
-                      <motion.div
-                        key="leaderboard"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Leaderboard />
-                      </motion.div>
-                    } />
-                    
-                    <Route path="/guidelines" element={
-                      <motion.div
-                        key="guidelines"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Guidelines />
-                      </motion.div>
-                    } />
-                  </Routes>
-                </AnimatePresence>
-              </div>
+            <main className="flex-1 overflow-auto">
+              <AnimatePresence mode="wait">
+                <Routes>
+                  <Route path="/" element={
+                    <motion.div
+                      key="feed"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Feed />
+                    </motion.div>
+                  } />
+                  <Route path="/members" element={
+                    <motion.div
+                      key="members"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Members />
+                    </motion.div>
+                  } />
+                  <Route path="/classroom" element={
+                    <motion.div
+                      key="classroom"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Classroom />
+                    </motion.div>
+                  } />
+                  <Route path="/leaderboard" element={
+                    <motion.div
+                      key="leaderboard"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Leaderboard />
+                    </motion.div>
+                  } />
+                  <Route path="/guidelines" element={
+                    <motion.div
+                      key="guidelines"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Guidelines />
+                    </motion.div>
+                  } />
+                </Routes>
+              </AnimatePresence>
             </main>
           </div>
+
+          {/* Sidebar */}
+          <Sidebar isOpen={sidebarOpen} onClose={handleCloseSidebar} />
         </div>
         
         {/* Toast Notifications */}

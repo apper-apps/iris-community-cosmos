@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import SearchBar from "@/components/molecules/SearchBar";
-import MemberCard from "@/components/organisms/MemberCard";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
+import Loading from "@/components/ui/Loading";
+import SearchBar from "@/components/molecules/SearchBar";
+import MemberCard from "@/components/organisms/MemberCard";
 import userService from "@/services/api/userService";
 
 const Members = () => {
   const [members, setMembers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
   const loadMembers = async () => {
@@ -66,11 +66,11 @@ const Members = () => {
         </p>
       </div>
 
-      {/* Search */}
+{/* Search */}
       <SearchBar
+        value={searchQuery}
+        onChange={setSearchQuery}
         placeholder="Search members by name, bio, or activity level..."
-        onSearch={setSearchQuery}
-        className="max-w-md"
       />
 
       {/* Stats */}
@@ -97,7 +97,7 @@ const Members = () => {
 
       {/* Members Grid */}
       {filteredMembers.length === 0 ? (
-        <Empty
+<Empty
           icon="Users"
           title={searchQuery ? "No members found" : "No members yet"}
           message={searchQuery ? "Try adjusting your search terms" : "Be the first to join this community!"}

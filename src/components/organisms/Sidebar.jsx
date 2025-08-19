@@ -45,7 +45,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   // Desktop Sidebar
   const DesktopSidebar = () => (
-    <div className="hidden lg:block w-64 h-full bg-surface border-r border-gray-700">
+<div className="hidden lg:block w-64 h-full bg-surface border-l border-gray-700">
       <div className="p-6">
         <div className="flex items-center gap-3 mb-8">
           <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
@@ -85,7 +85,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? 0 : "-100%" }}
         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-        className="lg:hidden fixed left-0 top-0 h-full w-64 bg-surface border-r border-gray-700 z-50"
+className="lg:hidden fixed right-0 top-0 h-full w-64 bg-surface border-l border-gray-700 z-50"
       >
         <div className="p-6">
           <div className="flex items-center justify-between mb-8">
