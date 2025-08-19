@@ -91,8 +91,8 @@ const PostCard = ({
       </h2>
 
       {/* Post Content */}
-      <div 
-        className="text-gray-300 mb-4 leading-relaxed"
+<div 
+        className="text-gray-300 mb-4 leading-relaxed px-4"
         dangerouslySetInnerHTML={{ 
           __html: formatContent(post.content) 
         }}
