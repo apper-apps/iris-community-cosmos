@@ -33,66 +33,68 @@ return (
 <Header onMenuToggle={handleMenuToggle} userPoints={1250} />
             
             {/* Page Content */}
-            <main className="flex-1 overflow-auto">
-              <AnimatePresence mode="wait">
-                <Routes>
-                  <Route path="/" element={
-                    <motion.div
-                      key="feed"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Feed />
-                    </motion.div>
-                  } />
-                  <Route path="/members" element={
-                    <motion.div
-                      key="members"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Members />
-                    </motion.div>
-                  } />
-                  <Route path="/classroom" element={
-                    <motion.div
-                      key="classroom"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Classroom />
-                    </motion.div>
-                  } />
-                  <Route path="/leaderboard" element={
-                    <motion.div
-                      key="leaderboard"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Leaderboard />
-                    </motion.div>
-                  } />
-                  <Route path="/guidelines" element={
-                    <motion.div
-                      key="guidelines"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <Guidelines />
-                    </motion.div>
-                  } />
-                </Routes>
-              </AnimatePresence>
+<main className="flex-1 overflow-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-6xl mx-auto">
+                <AnimatePresence mode="wait">
+                  <Routes>
+                    <Route path="/" element={
+                      <motion.div
+                        key="feed"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Feed />
+                      </motion.div>
+                    } />
+                    <Route path="/members" element={
+                      <motion.div
+                        key="members"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Members />
+                      </motion.div>
+                    } />
+                    <Route path="/classroom" element={
+                      <motion.div
+                        key="classroom"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Classroom />
+                      </motion.div>
+                    } />
+                    <Route path="/leaderboard" element={
+                      <motion.div
+                        key="leaderboard"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Leaderboard />
+                      </motion.div>
+                    } />
+                    <Route path="/guidelines" element={
+                      <motion.div
+                        key="guidelines"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Guidelines />
+                      </motion.div>
+                    } />
+                  </Routes>
+                </AnimatePresence>
+              </div>
             </main>
           </div>
 
